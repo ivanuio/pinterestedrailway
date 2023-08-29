@@ -1,0 +1,30 @@
+<nav class="navbar navbar-custom navbar-toggleable-md bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand" style="color: red;" href="/">Pinterested</a>
+    <% link_to 'Pinterested', root_path, class: 'navbar-brand' %> <!-- part not working but, well.. --> 
+
+   
+    <div class="collapse navbar-collapse pull-right" id="navbarNav">
+    </ul>
+     
+        <ul class="nav navbar-nav ms-auto "> <!-- ml-auto" navbar-rigth-->
+
+<li><%= link_to 'Home', root_path %></li>
+<li><%= link_to 'About Me', home_about_path %></li>
+<% if user_signed_in? %>
+  <li><%= link_to 'New Pin', new_pin_path %> </li>
+  <li> <%= link_to "List Pins", pins_path %></li>
+    <li><%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}  %></li>
+    <li><%= link_to "Edit Profile", edit_user_registration_path  %></li>
+<% else %>
+<li><%= link_to "Login", new_user_session_path %></li>
+  <li><%= link_to "Join", new_user_registration_path %></li>
+<% end %>
+
+
+      </ul>
+    </div>
+    </div>
+  </div>
+  </div>
+</nav>

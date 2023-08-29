@@ -1,0 +1,24 @@
+ <!-- data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 300 }'> working fl fine-->
+<%= render 'home/jumbo' unless user_signed_in? %>
+<h1>      Experience</h1>
+
+<%= stylesheet_link_tag('pins') %>
+<div class="containero">
+ <% @pins.each do |pin| %>
+
+  <div>    </div>
+    <div class="panel panel-default"></div> 
+      <%= link_to image_tag(pin.image, width: 350), pin %> 
+      <div class="panel-body">
+      <%= render pin %>    
+    </div>
+              <%= link_to "Show this pin", pin %> </br>
+     <% end %>
+      </div>
+     </div>
+  </div>
+</div>
+<div class="center"> 
+<%= will_paginate @pins, renderer: BootstrapPagination::Rails %></div>
+
+

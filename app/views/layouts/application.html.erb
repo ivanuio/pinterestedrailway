@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pinterested</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+<%= render 'home/header' %>
+
+<div class="container"> 
+  <body>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag(:div, msg, class: "alert alert-info") %><!-- <%= %> means only this line will output to the screen This  -->
+<% end %>
+
+
+    <%= yield %>
+  </body>
+  </div>
+</html>

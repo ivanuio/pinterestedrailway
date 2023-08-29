@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "masonry-layout": "^4.2.2"
+  },
+  "devDependencies": {
+    "coffeescript": "^2.7.0"
+  }
+}
